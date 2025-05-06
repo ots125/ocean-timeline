@@ -12,3 +12,9 @@ const revealOnScroll = () => {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+
+const toggleButton = document.getElementById("mode-toggle");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});

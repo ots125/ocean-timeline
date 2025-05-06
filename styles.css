@@ -1,55 +1,151 @@
+/* General Styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-  color: #333;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #1e1e1e;
+  color: #fff;
 }
 
+/* Header */
 header {
-  background-color: #006064;
-  color: white;
-  padding: 40px 20px;
   text-align: center;
+  padding: 50px;
+  background-color: #333;
+  color: #fff;
 }
 
 header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  color: #00aaff; /* Blue accent for the header */
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
-.timeline {
+/* Navbar (fixed on top) */
+.navbar {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 20px;
+  justify-content: center;
+}
+
+.navbar button {
+  background-color: #444;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.navbar button:hover {
+  background-color: #555;
+}
+
+/* Timeline Section */
+.timeline {
+  padding: 100px 20px 20px; /* Added padding on top for the fixed navbar */
+  background-color: #222;
+  margin-top: 50px; /* Ensure space for the fixed navbar */
 }
 
 .timeline-item {
-  background-color: #ffffff;
-  border-left: 5px solid #006064;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
   margin: 20px 0;
   padding: 20px;
-  width: 80%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%; /* Restrict width */
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 5px solid #00aaff; /* Blue left border */
 }
 
 .timeline-item h2 {
-  color: #006064;
+  font-size: 1.8em;
   margin-bottom: 10px;
+  color: #00aaff; /* Blue accent for the title */
 }
 
 .timeline-item p {
-  line-height: 1.6;
+  font-size: 1.1em;
 }
 
 .timeline-item img {
   width: 100%;
   height: auto;
-  margin-top: 15px;
-  border-radius: 5px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: #f0f8ff;
+  color: #000;
+}
+
+body.light-mode header {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .navbar {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .navbar button {
+  background-color: #ccc;
+  color: #000;
+}
+
+body.light-mode .timeline-item {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .timeline-item img {
+  filter: brightness(1.2);
+}
+
+/* Responsive Styles for Mobile */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 30px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  .timeline-item {
+    margin: 15px 0;
+    padding: 15px;
+    width: 90%; /* Reduced width for smaller screens */
+  }
+
+  .timeline-item h2 {
+    font-size: 1.6em;
+  }
+
+  .timeline-item p {
+    font-size: 1em;
+  }
+
+  .navbar button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
 }
